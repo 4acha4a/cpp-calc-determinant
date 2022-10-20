@@ -65,6 +65,15 @@ class Matrix {
         return determinant;
     }
 
+    private:
+        int size = 0;
+        vector<vector<int>> values_;
+        vector<vector<bool>> values_sign_; 
+
+    bool is_integer(const float k) {
+        return floor(k) == k;
+    }
+
     Matrix subMatrix(const int index_row, const int index_column){
         Matrix matrix;
         matrix.size = size - 1;
@@ -84,15 +93,6 @@ class Matrix {
             }
         }
         return matrix;
-    }
-
-    private:
-        int size = 0;
-        vector<vector<int>> values_;
-        vector<vector<bool>> values_sign_; 
-
-    bool is_integer(const float k) {
-        return floor(k) == k;
     }
 };
 
